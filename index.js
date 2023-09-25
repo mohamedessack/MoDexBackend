@@ -5,7 +5,10 @@ const cors = require("cors");
 require("dotenv").config();
 const port = 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://mo-dex-frontend.vercel.app',
+}));
+
 app.use(express.json());
 
 app.get("/tokenPrice", async (req, res) => {
